@@ -47,5 +47,5 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
         run: |
           cd telegram-bot-worker
-          wrangler secret put TELEGRAM_BOT_TOKEN --env production <<< "$TELEGRAM_BOT_TOKEN"
+          wrangler secret put TELEGRAM_BOT_TOKEN <<< "$TELEGRAM_BOT_TOKEN"
           wrangler deploy
