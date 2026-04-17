@@ -2,7 +2,7 @@ from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import Application, CommandHandler, CallbackQueryHandler
 
 TOKEN = "8755314746:AAEMWOl4GPlprc9PYfH4Z4E-Xapp0qVQd4c"
-WEB_APP_URL = "https://slcloud.cloudmaster.ru/arkanoid"
+WEB_APP_URL = "https://arkanoid-worker.ewesttt.workers.dev"
 
 async def start(update, context):
     keyboard = [[InlineKeyboardButton("🎮 Играть в Arkanoid", web_app={"url": WEB_APP_URL})]]
