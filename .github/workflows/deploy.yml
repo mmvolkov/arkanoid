@@ -49,3 +49,10 @@ jobs:
           cd telegram-bot-worker
           wrangler secret put TELEGRAM_BOT_TOKEN <<< "$TELEGRAM_BOT_TOKEN"
           wrangler deploy
+
+      - name: Set Telegram webhook
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        run: |
+          curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/setWebhook" \
+            -d "url=https://telegram-bot-worker.ewesttt.workers.dev"
