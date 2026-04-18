@@ -18,18 +18,27 @@ const GAME_HTML = `<!DOCTYPE html>
       box-sizing: border-box;
     }
 
-    body {
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
       background: #0a0a1a;
+      font-family: 'Orbitron', monospace;
+    }
+
+    body {
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 100vh;
-      font-family: 'Orbitron', monospace;
-      overflow: hidden;
     }
 
     #gameContainer {
       position: relative;
+      width: 100%;
+      height: 100%;
+      max-width: 100vmin;
+      max-height: 100vmin;
+      margin: auto;
       border: 2px solid #00f0ff;
       box-shadow: 0 0 20px #00f0ff, 0 0 40px #00f0ff33, inset 0 0 60px #00f0ff11;
       border-radius: 4px;
@@ -37,23 +46,25 @@ const GAME_HTML = `<!DOCTYPE html>
 
     #gameCanvas {
       display: block;
+      width: 100%;
+      height: 100%;
       background: linear-gradient(180deg, #0a0a1a 0%, #1a0a2e 100%);
     }
 
     #ui {
       position: absolute;
-      top: 15px;
+      top: 2%;
       left: 0;
       right: 0;
       display: flex;
       justify-content: space-between;
-      padding: 0 20px;
+      padding: 0 5%;
       pointer-events: none;
+      font-size: clamp(10px, 2.5vmin, 16px);
     }
 
     .ui-text {
       color: #00f0ff;
-      font-size: 16px;
       font-weight: 700;
       text-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff;
       letter-spacing: 2px;
@@ -78,7 +89,7 @@ const GAME_HTML = `<!DOCTYPE html>
 
     #overlay h1 {
       color: #ff00ff;
-      font-size: 48px;
+      font-size: clamp(24px, 8vmin, 48px);
       font-weight: 900;
       text-shadow: 0 0 20px #ff00ff, 0 0 40px #ff00ff, 0 0 60px #ff00ff;
       margin-bottom: 10px;
@@ -87,7 +98,7 @@ const GAME_HTML = `<!DOCTYPE html>
 
     #overlay .subtitle {
       color: #00f0ff;
-      font-size: 14px;
+      font-size: clamp(10px, 3vmin, 14px);
       text-shadow: 0 0 10px #00f0ff;
       margin-bottom: 30px;
       letter-spacing: 3px;
@@ -95,7 +106,7 @@ const GAME_HTML = `<!DOCTYPE html>
 
     #overlay .prompt {
       color: #ffff00;
-      font-size: 16px;
+      font-size: clamp(12px, 3vmin, 16px);
       text-shadow: 0 0 10px #ffff00;
       animation: pulse 1.5s ease-in-out infinite;
       letter-spacing: 2px;
@@ -108,7 +119,7 @@ const GAME_HTML = `<!DOCTYPE html>
 
     #finalScore {
       color: #00ff88;
-      font-size: 24px;
+      font-size: clamp(16px, 4vmin, 24px);
       text-shadow: 0 0 15px #00ff88;
       margin-bottom: 20px;
     }
@@ -663,6 +674,21 @@ const GAME_HTML = `<!DOCTYPE html>
       mouseX = (e.clientX - rect.left) * (W / rect.width);
       lastMouseX = mouseX;
       usingMouse = true;
+    });
+
+    canvas.addEventListener('touchmove', (e) => {
+      e.preventDefault();
+      const rect = canvas.getBoundingClientRect();
+      const touch = e.touches[0];
+      mouseX = (touch.clientX - rect.left) * (W / rect.width);
+      lastMouseX = mouseX;
+      usingMouse = true;
+    }, { passive: false });
+
+    canvas.addEventListener('touchstart', (e) => {
+      if (gameState === 'start') {
+        handleStart();
+      }
     });
 
     canvas.addEventListener('mouseleave', () => {
