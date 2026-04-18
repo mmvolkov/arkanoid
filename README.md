@@ -36,3 +36,6 @@ Open `arkanoid.html` in any modern browser.
 open arkanoid.html
 ```
 <img width="2752" height="1536" alt="image" src="https://github.com/user-attachments/assets/e3ca8b2e-9029-401b-a942-722e11e04ae1" />
+
+## Пошаговая инструкция по развертыванию связки Claude Code и облачной модели через Ollama, адаптированная с использованием модели kimi 2.5
+https://docs.google.com/document/d/1rM2KWg3bYQDT8le4J9YmDcnfbAHVEq9SCxgXQjkGo-k/edit?usp=sharing
