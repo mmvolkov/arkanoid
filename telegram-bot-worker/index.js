@@ -12,7 +12,9 @@ async function handleRequest(request, env) {
   bot.command('start', async (ctx) => {
     await ctx.reply('Добро пожаловать в Neon Arkanoid! 🎮\n\nИспользуй мышку или стрелки для управления.', {
       reply_markup: {
-        web_app: { url: WEB_APP_URL }
+        inline_keyboard: [[
+          { text: '🎮 Играть в Arkanoid', web_app: { url: WEB_APP_URL } }
+        ]]
       }
     });
   });
