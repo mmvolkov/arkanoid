@@ -14,6 +14,9 @@ Classic brick-breaker arcade game with a modern neon aesthetic.
 - **Click** or **Space** — start game / launch ball
 - **Arrow Keys / A, D** — move paddle (layout-independent)
 
+<img width="955" height="723" alt="image" src="https://github.com/user-attachments/assets/c0fbc026-e230-41a3-ab5e-85a26abd8340" />
+
+
 ## Features
 
 - 9 unique level patterns (levels 1-7 randomized)
@@ -24,6 +27,8 @@ Classic brick-breaker arcade game with a modern neon aesthetic.
 - Ball speed increases with each level
 
 ## Run
+
+<img width="1624" height="1061" alt="image" src="https://github.com/user-attachments/assets/89c5bfc5-72a1-4a66-b924-b2feb4f44183" />
 
 Open `arkanoid.html` in any modern browser.
 
