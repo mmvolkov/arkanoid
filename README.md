@@ -1,3 +1,9 @@
+# Claude Code and Ollama: Free Cloud-Powered AI Development Guide
+
+**Notebook:** https://notebooklm.google.com/notebook/c67d713b-0fd2-405d-82b0-b8088a44467b
+
+---
+
 # Neon Arkanoid
 
 Classic brick-breaker arcade game with a modern neon aesthetic.
