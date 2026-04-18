@@ -30,3 +30,4 @@ Open `arkanoid.html` in any modern browser.
 ```bash
 open arkanoid.html
 ```
+<img width="2752" height="1536" alt="image" src="https://github.com/user-attachments/assets/e3ca8b2e-9029-401b-a942-722e11e04ae1" />
