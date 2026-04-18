@@ -697,6 +697,15 @@ const GAME_HTML = `<!DOCTYPE html>
 
     canvas.addEventListener('click', handleStart);
 
+    overlay.addEventListener('touchstart', (e) => {
+      if (gameState === 'start') {
+        e.preventDefault();
+        handleStart();
+      }
+    }, { passive: false });
+
+    overlay.addEventListener('click', handleStart);
+
     window.addEventListener('keydown', (e) => {
       if (e.code === 'ArrowLeft' || e.code === 'KeyA') {
         keys.left = true;
